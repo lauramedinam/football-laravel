@@ -19,9 +19,7 @@ class ConsultasController extends Controller
     }
      public function index1()
     {
-        Team::with('President')->get();
-
+        return Team::with('president')->get();
         
     }
 }
-

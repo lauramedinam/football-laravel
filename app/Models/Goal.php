@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Goal extends Model
 {
     use HasFactory;
-     //Relacion Uno a Muchos (Inversa) 
-    public function game(){
-        return $this->belongsTo('App\Models\game');
+
+    //Relacion Uno a Muchos (Inversa) 
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
     }
-       //Relacion Uno a Muchos (Inversa) 
-    public function player(){
-        return $this->belongsTo('App\Models\player');
+
+    //Relacion Uno a Muchos (Inversa) 
+    public function player()
+    {
+        return $this->belongsTo(Player::class);
     }
 }

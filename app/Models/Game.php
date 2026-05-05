@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     use HasFactory;
-       public function teams()
+
+    public function teams()
     {
-       return $this->belongsToMany('App\Models\teams');
+       return $this->belongsToMany(Team::class, 'team_games');
     }
-        public function goals()
+
+    public function goals()
     {
-       // return $this->hasOne(User::class, 'foreign_key', 'local_key');
-       return $this->hasMany('App\Models\goal');
+       return $this->hasMany(Goal::class);
     }
 }

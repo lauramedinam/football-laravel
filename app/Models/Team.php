@@ -8,17 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
-    //uno a uno con llave foranea
-    public function President()
+
+    //uno a uno con llave foranea (teams table has president_id)
+    public function president()
     {
-       return $this->hasOne('App\Models\president');
+       return $this->belongsTo(President::class);
     }
+
     // Relacion Uno a Muchos 
-    public function Players(){
-        return $this->hasMany('App\Models\Player');
-    }
-     public function Games()
+    public function players()
     {
-       return $this->belongsToMany('App\Models\games');
+        return $this->hasMany(Player::class);
+    }
+
+    public function games()
+    {
+       return $this->belongsToMany(Game::class, 'team_games');
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('capacity');
             $table->date('year_of_fundation');
             $table->foreignId('president_id')->constrained('presidents')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

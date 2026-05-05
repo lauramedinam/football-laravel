@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
-     //Relacion Uno a Muchos (Inversa) 
-    public function team(){
-        return $this->belongsTo('App\Models\team');
-    }
-       public function goals()
+
+    //Relacion Uno a Muchos (Inversa) 
+    public function team()
     {
-       // return $this->hasOne(User::class, 'foreign_key', 'local_key');
-       return $this->hasMany('App\Models\goal');
+        return $this->belongsTo(Team::class);
+    }
+
+    public function goals()
+    {
+       return $this->hasMany(Goal::class);
     }
 }
