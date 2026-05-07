@@ -24,3 +24,11 @@ Route::get('/games', [ConsultasController::class, 'index']);
 
 
 Route::get('/teams', [ConsultasController::class, 'index1']);
+
+Route::get('/players', [ConsultasController::class, 'index2']);
+
+Route::get('/goals', [ConsultasController::class, 'index3']);
+
+Route::get('/games1', [ConsultasController::class, 'index4']);
+
+Route::get('/president', [ConsultasController::class, 'index5']);
