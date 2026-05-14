@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,3 +33,4 @@ Route::get('/goals', [ConsultasController::class, 'index3']);
 Route::get('/games1', [ConsultasController::class, 'index4']);
 
 Route::get('/president', [ConsultasController::class, 'index5']);
+*/
